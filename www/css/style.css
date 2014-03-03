@@ -23,7 +23,7 @@ body {
   font-size: 16px;
 }
 .home {
-  background-color: #fff2d5;
+  background-color: #f9f8f4;
   background-image: url(../img/homeback.png);
   background-position: right bottom;
   background-attachment: fixed;
@@ -110,6 +110,18 @@ input, select {
   border-radius: 5px;
   border-bottom: 2px solid #b4b4b4;
 }
+input[placeholder]          {
+  text-overflow:ellipsis;
+}
+input::-moz-placeholder     {
+  text-overflow:ellipsis;
+} 
+input:-moz-placeholder      {
+  text-overflow:ellipsis;
+} 
+input:-ms-input-placeholder {
+  text-overflow:ellipsis;
+}
 select {
   color: #555;
 }
@@ -145,9 +157,14 @@ button:active, button:focus, button:hover {
 .logo {
   height: 50px;
   width: 150px;
-  padding: 15px 0;
-  left:50%;
-  margin-left: -75px;
+  padding: 15px 15px;
+  font-size: 19px;
+  color: #f5f5f5;
+}
+.logo {
+  height: 50px;
+  width: 150px;
+  padding: 15px 15px;
   font-size: 19px;
   color: #f5f5f5;
 }
@@ -170,27 +187,19 @@ button:active, button:focus, button:hover {
 }
 
 .menu {
-  transform: translateX(-150px);
-  -o-transform: translateX(-150px);
-  -ms-transform: translateX(-150px);
-  -moz-transform: translateX(-150px);
-  -webkit-transform: translateX(-150px);
   top: 50px;
-  width: 150px;
-  min-height: 100px;
+  display: none;
+  width: 130px;
+  min-height: 50px;
   background-color: rgba(40,40,40,.9);
   border: 1px solid #353535;
   text-shadow: 0 1px 0px #000;
   border-bottom-width: 2px;
   border-bottom-color: #272727;
-  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
 }
 .menu.active {
-  transform: translateX(0);
-  -o-transform: translateX(0);
-  -ms-transform: translateX(0);
-  -moz-transform: translateX(0);
-  -webkit-transform: translateX(0);
+  display: block;
 }
 
 .menu ul {
@@ -201,7 +210,7 @@ button:active, button:focus, button:hover {
   height: 39px;
 }
 .menu a {
-  padding: 9px 13px 12px;
+  padding: 9px 0 12px 18px;
   font-size: 14px;
   color: #ddd;
 }

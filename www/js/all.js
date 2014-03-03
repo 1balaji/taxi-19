@@ -2,9 +2,20 @@
 
 document.ready = function() {
 	var content = document.getElementById('content');
+	var homeContent = document.getElementById('homeContent');
 	var menu = document.getElementById('menu');
-if (content) {
 	var showmMenu = false;
+if (content) {
+	content.onclick = function() {
+		hideMenu();
+	}
+}
+if (homeContent) {
+	homeContent.onclick = function() {
+		hideMenu();
+	}
+}
+
 	document.getElementById('open_menu').onclick = function(event) {
 		if (!showmMenu) {
 			showmMenu = true;
@@ -12,19 +23,9 @@ if (content) {
 			menu.classList.add('active');
 		}
 		else {
-			showmMenu = false;
-			this.classList.remove('active');
-			menu.classList.remove('active');
+			hideMenu();
 		};
 	}
-	content.onclick = function() {
-		if (showmMenu) {
-			document.getElementById('open_menu').classList.remove('active');
-			menu.classList.remove('active');
-			showmMenu = false;
-		}
-	}
-}
 
 
 	function setStyles() {
@@ -94,127 +95,12 @@ function getElementComputedStyle(elem, prop) {
 }
 
 
-/*
-function hookEvent(hElem, eventName, callback) {
-  if (typeof(hElem) == 'string') {
-    hElem = document.getElementById(hElem);
-  }
-  if (!hElem) { return false; }
- 
-  if (hElem.addEventListener) {
-    if (eventName == 'mousewheel') {
-      hElem.addEventListener('DOMMouseScroll', callback, false);
-    }
-    hElem.addEventListener(eventName, callback, false);
-  }
-  else if (hElem.attachEvent) {
-    hElem.attachEvent('on' + eventName, callback);
-  }
-  else { return false; }
-  return true;
-}
-
-
-function unhookEvent(hElem, eventName, callback) {
-  if (typeof(hElem) == 'string') {
-    hElem = document.getElementById(hElem);
-  }
-  if (!hElem) { return false; }
- 
-  if (hElem.removeEventListener) {
-    if (eventName == 'mousewheel') {
-      hElem.removeEventListener('DOMMouseScroll', callback, false);
-    }
-    hElem.removeEventListener(eventName, callback, false);
-  }
-  else if (hElem.detachEvent) {
-    hElem.detachEvent('on' + eventName, callback);
-  }
-  else { return false; }
-  return true;
-}
-
-
-function cancelEvent(e) {
-  e = e ? e : window.event;
-  if (e.stopPropagation) {
-    e.stopPropagation();
-  }
-  if (e.preventDefault) {
-    e.preventDefault();
-  }
-  e.cancelBubble = true;
-  e.cancel = true;
-  e.returnValue = false;
-  return false;
-}
-
-
-function setHook(obj, act, fun) {
-  act ? hookEvent(obj.id, 'mousewheel', fun) : unhookEvent(obj.id, 'mousewheel', fun);
-}
-
-function MouseWheelFunction(e) {
-  e = e ? e : window.event;
-  var wheelElem = e.target ? e.target : e.srcElement;
-  var wheelData = e.detail ? e.detail * -1 : e.wheelDelta / 40;
-  if (Math.abs(wheelData)>100) { wheelData=Math.round(wheelData/100); }
-  documentScroll(wheelData/-3);
-  return cancelEvent(e);
-}*/
-
-function quad(progress, pow) {
-	var a = pow;
-	function delta(progress) {
-		return Math.pow(progress, a)
-	}
-
-	if (progress <= 0.5) return delta(2*progress) / 2;
-	else return (2 - delta(2*(1-progress))) / 2;
-}
-
-function animate(id, attribute, attrNow, attrEnd, time, func) {
-	attribute = attribute;
-	var elem = document.getElementById(id);
-	if (!attrNow) {
-		var attrNow = getElementComputedStyle(id, attribute);
-		attrNow = attrNow.substr(0,attrNow.length-2);
-		attrNow = +attrNow;
-	}
-	else {
-		var cssNow = attribute+':'+attrNow+'px';
-		document.getElementById(id).style.cssText += cssNow;
-	}
-	var start = new Date;
-
-
-	var timer = setInterval(function(){
-
-		var progress = (new Date - start)/time;
-		if (progress > 1) progress = 1;
-		if (func == 'quad') var res = attrNow + (attrEnd - attrNow)*quad(progress, 2);
-		else if (func == 'pow') var res = attrNow + (attrEnd - attrNow)*quad(progress, 5);
-		else if (func == 'linear') var res = attrNow + (attrEnd - attrNow)*progress;
-
-		var hope;
-		if (attribute == 'opacity') hope = attribute+':'+res;
-		else if (attribute == 'translateX') {
-			hope = '-moz-transform: translateX('+res+'px); ';
-			hope += '-ms-transform: translateX('+res+'px); ';
-			hope += '-webkit-transform: translateX('+res+'px); ';
-			hope += '-o-transform: translateX('+res+'px); ';
-			hope += 'transform: translateX('+res+'px)';
+	function hideMenu() {
+		if (showmMenu) {
+			document.getElementById('open_menu').classList.remove('active');
+			menu.classList.remove('active');
+			showmMenu = false;
 		}
-		else hope = attribute+':'+res+'px';
-
-		document.getElementById(id).style.cssText += hope;
- 		
-		if (progress == 1) {
-			clearInterval(timer);
-		}
-
-	}, 10)
-
-}
+	}
 
 }
