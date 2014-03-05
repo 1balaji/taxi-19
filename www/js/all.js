@@ -4,6 +4,9 @@ document.ready = function() {
 	var content = document.getElementById('content');
 	var homeContent = document.getElementById('homeContent');
 	var menu = document.getElementById('menu');
+	var bd = document.getElementById('body');
+	var home = document.getElementById('home');
+
 	var showmMenu = false;
 if (content) {
 	content.onclick = function() {
@@ -11,7 +14,7 @@ if (content) {
 	}
 }
 if (homeContent) {
-	homeContent.onclick = function() {
+	home.onclick = function() {
 		hideMenu();
 	}
 }
@@ -33,7 +36,8 @@ if (homeContent) {
 		if (homeContent) {
 			var a = 1;
 			if (alertHeight() < 350) a = 51;
-			homeContent.style.marginTop = (alertHeight() - homeContent.offsetHeight)/2+a+'px';
+			homeContent.style.paddingTop = (alertHeight() - 280)/2+a+'px';
+			home.style.height = alertHeight()+'px';
 		}
 	}
 

@@ -25,7 +25,7 @@ body {
 .home {
   background-color: #f9f8f4;
   background-image: url(../img/homeback.png);
-  background-position: right bottom;
+  background-position: left bottom;
   background-attachment: fixed;
   background-repeat: repeat-x;
   background-size: auto 50px;
@@ -181,7 +181,7 @@ button:active, button:focus, button:hover {
 
 .menu {
   top: 50px;
-  display: none;
+  visibility: hidden;
   width: 130px;
   min-height: 50px;
   background-color: rgba(40,40,40,.9);
@@ -192,7 +192,7 @@ button:active, button:focus, button:hover {
   border-bottom-left-radius: 7px;
 }
 .menu.active {
-  display: block;
+  visibility: visible;
 }
 
 .menu ul {
@@ -210,7 +210,14 @@ button:active, button:focus, button:hover {
 .menu a:active, .menu a:focus, .menu a:hover {
   background-color: rgba(0,0,0,.12);
 }
-
+.home {
+  background-color: #f9f8f4;
+  background-image: url(../img/homeback.png);
+  background-position: left bottom;
+  background-attachment: fixed;
+  background-repeat: repeat-x;
+  background-size: auto 50px;
+}
 .home-content {
   width: 100%;
   padding: 10px 25px;
