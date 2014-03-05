@@ -238,7 +238,8 @@ button:active, button:focus, button:hover {
   padding-bottom:20px;
   color: #da9a00;
 }
-.reg-form {
+.reg-form p {
+  margin-bottom: 10px;
 }
 .reg-form input {
   background: #fffcf6;
@@ -247,6 +248,10 @@ button:active, button:focus, button:hover {
   font-size: 14px;
   color: #da9a00;
   margin-left: 5px;
+  background-color: #f9f8f4;
+  padding: 10px 4px;
+  border-radius: 5px;
+  border: 1px solid #f0f0f0;
 }
 
 

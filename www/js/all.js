@@ -35,9 +35,14 @@ if (homeContent) {
 		homeContent = document.getElementById('homeContent');
 		if (homeContent) {
 			var a = 1;
-			if (alertHeight() < 350) a = 51;
-			homeContent.style.paddingTop = (alertHeight() - 280)/2+a+'px';
-			home.style.height = alertHeight()+'px';
+			var hkHeight = 280;
+			var inpId = document.getElementById('reg_ID');
+			if (inpId) hkHeight = 406;
+			if (alertHeight() < hkHeight+135) {
+				homeContent.style.paddingTop = 70+'px';
+			}
+			else homeContent.style.paddingTop = (alertHeight() - hkHeight)/2+a+'px';
+			home.style.cssText += 'min-height:'+alertHeight()+'px';
 		}
 	}
 
