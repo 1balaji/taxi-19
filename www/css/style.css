@@ -152,6 +152,7 @@ button:active, button:focus, button:hover {
   color: #fff;
   background: #eca700;
   text-shadow: 0 1px 0px #9b6c00;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 .logo {
   height: 50px;
