@@ -181,7 +181,7 @@ button:active, button:focus, button:hover {
 
 .menu {
   top: -100px;
-  opacity: 1;
+  opacity: 0;
   width: 130px;
   min-height: 50px;
   background-color: rgba(40,40,40,.9);
@@ -193,7 +193,7 @@ button:active, button:focus, button:hover {
   pointer-events: none;
 }
 .menu.active {
-  opacity: 0;
+  opacity: 1;
   pointer-events: auto;
   top:50px;
 }
