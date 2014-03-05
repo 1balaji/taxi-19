@@ -148,7 +148,7 @@ button:active, button:focus, button:hover {
   width: 100%;
   height: 51px;
   border-top: 2px solid #ffb80c;
-  border-bottom: 2px solid #e5a000;
+  border-bottom: 2px solid #e8a200;
   color: #fff;
   background: #eca700;
   text-shadow: 0 1px 0px #9b6c00;
@@ -181,7 +181,7 @@ button:active, button:focus, button:hover {
 
 .menu {
   top: 50px;
-  visibility: hidden;
+  opacity: 1;
   width: 130px;
   min-height: 50px;
   background-color: rgba(40,40,40,.9);
@@ -190,9 +190,11 @@ button:active, button:focus, button:hover {
   border-bottom-width: 2px;
   border-bottom-color: #272727;
   border-bottom-left-radius: 7px;
+  pointer-events: none;
 }
 .menu.active {
-  visibility: visible;
+  opacity: 0;
+  pointer-events: auto;
 }
 
 .menu ul {
