@@ -5,7 +5,6 @@ document.ready = function() {
 	var homeContent = document.getElementById('homeContent');
 	var menu = document.getElementById('menu');
 	var bd = document.getElementById('body');
-	var home = document.getElementById('home');
 
 	var showmMenu = false;
 if (content) {
@@ -14,7 +13,7 @@ if (content) {
 	}
 }
 if (homeContent) {
-	home.onclick = function() {
+	homeContent.onclick = function() {
 		hideMenu();
 	}
 }
@@ -35,14 +34,14 @@ if (homeContent) {
 		homeContent = document.getElementById('homeContent');
 		if (homeContent) {
 			var a = 1;
-			var hkHeight = 280;
+			var hkHeight = 265;
 			var inpId = document.getElementById('reg_ID');
-			if (inpId) hkHeight = 406;
+			if (inpId) hkHeight = 607;
 			if (alertHeight() < hkHeight+135) {
-				homeContent.style.paddingTop = 70+'px';
+				homeContent.style.paddingTop = 80+'px';
 			}
 			else homeContent.style.paddingTop = (alertHeight() - hkHeight)/2+a+'px';
-			home.style.cssText += 'min-height:'+alertHeight()+'px';
+			body.style.cssText += 'min-height:'+alertHeight()+'px';
 		}
 	}
 

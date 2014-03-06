@@ -47,6 +47,9 @@ input:focus, input:active, button:focus, textarea:focus, button:active, textarea
 .font-400 {
   font-weight: 400;
 }
+.font-300, .logo, .reg-form p {
+  font-weight: 300;
+}
 .t-0 {
   top:-1px;
 }
@@ -92,7 +95,7 @@ input:focus, input:active, button:focus, textarea:focus, button:active, textarea
 .text-und:hover {
   text-decoration: underline;
 }
-.trans-025{
+.trans-025, .menu a, .nav-menu {
   -webkit-transition: all 0.25s ease 0s;
   -moz-transition: all 0.25s ease 0s;
   -ms-transition: all 0.25s ease 0s;
@@ -102,13 +105,13 @@ input:focus, input:active, button:focus, textarea:focus, button:active, textarea
 
 
 input, select {
-  padding: 10px;
-  border: 1px solid #bbb;
+  padding: 12px 10px;
+  border: 1px solid #c1c1c1;
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 14px;
   font-size: 14px;
   border-radius: 5px;
-  border-bottom: 2px solid #b4b4b4;
+  border-bottom: 2px solid #b9b9b9;
 }
 input[placeholder]          {
   text-overflow:ellipsis;
@@ -129,15 +132,16 @@ option {
   padding: 0 10px;
 }
 button {
-  padding: 8px;
+  padding: 10px;
   border-style: solid;
   border-width: 1px 1px 2px;
   border-color: #ffb200 #f3aa00 #d19200;
   background-color: #ffb400;
-  font-size: 14px;
+  font-size: 15px;
   color: #fff;
   text-shadow: 0 1px 0px #9b6c00;
   border-radius: 5px;
+  box-shadow: 0 0 10px rgba(255,255,255,.15) inset;
 }
 button:active, button:focus, button:hover {
   background-color: #f2aa00;
@@ -153,6 +157,7 @@ button:active, button:focus, button:hover {
   background: #eca700;
   text-shadow: 0 1px 0px #9b6c00;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  z-index:3;
 }
 .logo {
   height: 50px;
@@ -180,53 +185,53 @@ button:active, button:focus, button:hover {
 }
 
 .menu {
-  top: -100px;
-  opacity: 0;
-  width: 130px;
+  top: -300px;
+  width: 150px;
   min-height: 50px;
   background-color: rgba(40,40,40,.9);
-  border: 1px solid #353535;
+  border: 1px solid #101010;
+  border-width: 0 0 1px 1px;
   text-shadow: 0 1px 0px #000;
-  border-bottom-width: 2px;
-  border-bottom-color: #272727;
+  border-bottom-color: #090909;
   border-bottom-left-radius: 7px;
-  pointer-events: none;
+  z-index:2;
 }
 .menu.active {
-  opacity: 1;
-  pointer-events: auto;
   top:50px;
 }
 
 .menu ul {
   text-align: left;
-  padding: 15px 0;
+  padding: 18px 0;
 }
 .menu li {
-  height: 39px;
+  height: 49px;
 }
 .menu a {
-  padding: 9px 0 12px 18px;
+  padding: 14px 0 17px 26px;
   font-size: 14px;
   color: #ddd;
 }
 .menu a:active, .menu a:focus, .menu a:hover {
   background-color: rgba(0,0,0,.12);
 }
-.home {
-  background-color: #f9f8f4;
-  background-image: url(../img/homeback.png);
-  background-position: left bottom;
-  background-attachment: fixed;
-  background-repeat: repeat-x;
-  background-size: auto 50px;
-}
 .home-content {
   width: 100%;
-  padding: 10px 25px;
-  max-width: 400px;
+  padding: 10px 20px 80px;
   border-radius: 2px;
 }
+
+
+.bottom-panel {
+  width: 100%;
+  padding:15px 20px;
+  background: #eee;
+  border-top: 1px solid #d7d7d7;
+  z-index:1;
+  box-shadow: 0 -1px 1px rgba(0, 0, 0, 0.07);
+}
+
+
 .content {
   margin-top:50px;
   min-height: 400px;
@@ -242,19 +247,19 @@ button:active, button:focus, button:hover {
   color: #da9a00;
 }
 .reg-form p {
-  margin-bottom: 10px;
+  margin-bottom: 16px;
+  padding: 5px 0;
+  color: #DA9A00;
 }
 .reg-form input {
   background: #fffcf6;
 }
-.reg-form a {
-  font-size: 14px;
+.reg-form a, .bottom-panel a {
+  font-size: 15px;
   color: #da9a00;
   margin-left: 5px;
-  background-color: #f9f8f4;
-  padding: 10px 4px;
+  padding: 12px 5px;
   border-radius: 5px;
-  border: 1px solid #f0f0f0;
 }
 
 
@@ -280,22 +285,23 @@ button:active, button:focus, button:hover {
 }
 .button-box {
   padding: 20px 45px;
-  background-color: #eee;
-  border-top: 1px solid #ddd;
+  background: #eee;
+  border-top: 1px solid #d7d7d7;
+  z-index:1;
+  box-shadow: 0 -1px 1px rgba(0, 0, 0, 0.07);
   width: 100%;
 
 }
 .button-box button {
   width: 100%;
   padding: 15px 0;
-  font-size: 14px;
 }
 
 
 /* Adress */
 
 .address-form {
-  padding: 20px 10px;
+  padding: 20px;
 }
 .input {
   height: 50px;
@@ -305,7 +311,7 @@ button:active, button:focus, button:hover {
 }
 .address-form .input i {
   margin-left: -50px;
-  padding: 11px 12px;
+  padding: 13px 12px;
   color: #999;
   font-size: 20px;
 }
