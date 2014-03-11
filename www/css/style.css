@@ -87,7 +87,7 @@ input:focus, input:active, button:focus, textarea:focus, button:active, textarea
 .text-und:hover {
   text-decoration: underline;
 }
-.trans-025, .menu a, .nav-menu {
+.trans-025, .menu a, .nav-menu, button {
   -webkit-transition: all 0.25s ease 0s;
   -moz-transition: all 0.25s ease 0s;
   -ms-transition: all 0.25s ease 0s;
@@ -98,12 +98,12 @@ input:focus, input:active, button:focus, textarea:focus, button:active, textarea
 
 input, select {
   padding: 12px 10px;
-  border: 1px solid #c1c1c1;
+  border: 1px solid #c7c7c7;
   width: 100%;
   margin-bottom: 14px;
   font-size: 14px;
   border-radius: 5px;
-  border-bottom: 2px solid #b9b9b9;
+  border-bottom: 2px solid #c0c0c0;
 }
 input[placeholder]          {
   text-overflow:ellipsis;
@@ -127,16 +127,18 @@ button {
   padding: 10px;
   border-style: solid;
   border-width: 1px 1px 2px;
-  border-color: #ffb200 #f3aa00 #d19200;
+  border-color: #ffca50 #ffca50 #d19200;
   background-color: #ffb400;
   font-size: 15px;
   color: #fff;
   text-shadow: 0 1px 0px #9b6c00;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(255,255,255,.15) inset;
+  box-shadow: 0 2px 8px rgba(255,255,255,.2) inset, 0 -2px 8px rgba(255,255,255,.2) inset;
 }
 button:active, button:focus, button:hover {
-  background-color: #f2aa00;
+  box-shadow: 0 0 3px rgba(0,0,0,.04) inset;
+  /*background-color: #f2aa00;*/
+  border-color: #f3aa00 #f3aa00 #f5ba32;
 }
 
 
@@ -216,7 +218,7 @@ button:active, button:focus, button:hover {
 
 .bottom-panel {
   width: 100%;
-  padding:15px 20px;
+  padding:10px 20px;
   background: #eee;
   border-top: 1px solid #d7d7d7;
   z-index:1;
@@ -259,7 +261,7 @@ button:active, button:focus, button:hover {
 /*Order*/
 
 .order-form li {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #eee;
 }
 .order-form a {
   padding: 25px 15px;
@@ -276,11 +278,11 @@ button:active, button:focus, button:hover {
   color: #da9a00;
 }
 .button-box {
-  padding: 20px 45px;
+  padding: 15px 45px;
   background: #eee;
-  border-top: 1px solid #d7d7d7;
+  border-top: 1px solid #e0e0e0;
   z-index:1;
-  box-shadow: 0 -1px 1px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 -1px 1px #eee;
   width: 100%;
 
 }
@@ -317,4 +319,14 @@ button:active, button:focus, button:hover {
 .address-form select.fl-r {
   margin-left: 1%;
   margin-right: 0;
+}
+
+
+.allscreen {
+  background: rgba(0,0,0,.7);
+  z-index:10;
+}
+.allscreen img {
+  width: 60px;
+  height: 60px;
 }

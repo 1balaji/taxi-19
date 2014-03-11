@@ -30,6 +30,14 @@ if (homeContent) {
 	}
 
 
+	var allScreen = document.getElementById('allscreen');
+	if (allScreen) {
+		allScreen.onclick = function() {
+			this.style.display = 'none';
+		}
+	}
+
+
 	function setStyles() {
 		homeContent = document.getElementById('homeContent');
 		if (homeContent) {
@@ -42,6 +50,11 @@ if (homeContent) {
 			}
 			else homeContent.style.paddingTop = (alertHeight() - hkHeight)/2+a+'px';
 			body.style.cssText += 'min-height:'+alertHeight()+'px';
+		}
+		var allImg = document.getElementById('all_img');
+		if (allImg) {
+			allImg.style.marginTop = (alertHeight() - allImg.offsetHeight)/2+'px';
+			allImg.style.marginLeft = (alertWidth() - allImg.offsetWidth)/2+'px';
 		}
 	}
 
